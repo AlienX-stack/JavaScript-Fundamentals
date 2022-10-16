@@ -663,23 +663,118 @@ let address = {
 // console.log(post);
 
 // // Ex 6 --> Price Range Objects
-let priceRanges = [
-  {
-    label: "$",
-    tooltip: "Inexpensive",
-    minPerPerson: 0,
-    maxPerPerson: 10,
-  },
-  {
-    label: "$$",
-    tooltip: "Moderate",
-    minPerPerson: 11,
-    maxPerPerson: 100,
-  },
-  {
-    label: "$$$",
-    tooltip: "Expensive",
-    minPerPerson: 101,
-    maxPerPerson: 1000,
-  },
-];
+// let priceRanges = [
+//   {
+//     label: "$",
+//     tooltip: "Inexpensive",
+//     minPerPerson: 0,
+//     maxPerPerson: 10,
+//   },
+//   {
+//     label: "$$",
+//     tooltip: "Moderate",
+//     minPerPerson: 11,
+//     maxPerPerson: 100,
+//   },
+//   {
+//     label: "$$$",
+//     tooltip: "Expensive",
+//     minPerPerson: 101,
+//     maxPerPerson: 1000,
+//   },
+// ];
+
+/////////////////////////////////////////////////////////
+// Arrays
+
+// // Adding an element
+
+// const numbers = [1, 2, 3, 4, 1, 5];
+
+// //End
+// numbers.push(5, 6);
+// //Beginning
+// numbers.unshift(1, 2);
+// //Middle
+// numbers.splice(1, 0, "a", "b");
+
+// console.log(numbers);
+
+// // Finding elements (primitive)
+// console.log(numbers.indexOf("a"));
+// console.log(numbers.lastIndexOf(1));
+// console.log(numbers.indexOf(1) !== -1);
+// console.log(numbers.includes(1));
+
+// // Finding elements (reference types)
+
+// const courses = [
+//   { id: 1, name: "a" },
+//   { id: 2, name: "b" },
+// ];
+
+// courses.includes({ id: 1, name: "a" }); // false because two different references
+
+// const found = courses.find((course) => course.name === "a");
+// const foundIndex = courses.findIndex((course) => course.name === "a");
+// console.log(found);
+
+//// Removing elements from an array
+
+// End
+// const last = numbers.pop();
+
+// Beginning
+// const first = numbers.shift();
+// console.log(first);
+// Middle
+// numbers.splice(2, 2);
+// console.log(numbers);
+
+// // Emptying an array
+// let numbers = [1, 2, 3, 4];
+// let another = numbers;
+
+// Solution 1
+// numbers = []
+
+// Solution 2
+// numbers.length = 0;
+
+// Solution 3
+// numbers.splice(0, numbers.length);
+
+// Solution 4 (Not recommended)
+// while (numbers.length > 0) numbers.pop();
+
+// console.log(numbers);
+// console.log(another);
+
+// // Combining and slicing arrays
+// const first = [{ id: 1 }];
+// const second = [4, 5, 6];
+
+// const combined = first.concat(second);
+// first[0].id = 10;
+
+// const slice = combined.slice(2, 4);
+// console.log(combined);
+// console.log(slice);
+
+// // The Spread Operator
+
+// const first = [1, 2, 3];
+// const second = [4, 5, 6];
+
+// // const combined = first.concat(second);
+// const combined = [...first, ...second];
+
+// const copy = combined.slice();
+// const copy = [...combined];
+
+// // Iterating  an array
+const numbers = [1, 2, 3];
+
+// for (let number of numbers) console.log(number);
+
+numbers.forEach((number, index) => console.log(index, number));
