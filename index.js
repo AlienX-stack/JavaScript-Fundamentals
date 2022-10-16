@@ -482,3 +482,204 @@
 // let y = x;
 
 // x = 20;
+
+// let x = { value: 10 };
+// let y = x;
+
+// x.value = 20;
+
+////////////////
+// let number = 10;
+
+// function increase(number) {
+//   number++;
+// }
+// //number is passed by value
+// increase(number);
+// console.log(number); output:10
+
+//////////////////
+// let obj = { value: 10 };
+
+// function increase(obj) {
+//   obj.value++;
+// }
+// //// obj is passed by reference
+// increase(obj);
+// console.log(obj); output:11
+
+//// Enumerating an object
+const circle = {
+  radius: 1,
+  draw() {
+    console.log("draw");
+  },
+};
+
+// for (let key in circle) {
+//   console.log(key, circle[key]);
+// }
+
+// for (let key of Object.keys(circle)) console.log(key);
+// for (let entry of Object.entries(circle)) console.log(entry);
+
+// if ("radius" in circle) console.log("yes");
+
+// // Cloning an Object
+
+// Method 1
+// const another = {};
+// for (let key in circle) another[key] = circle[key];
+
+// Method 2
+// const another = Object.assign({}, circle);
+
+// console.log(another);
+
+// Method 3
+// const another = { ...circle };
+// console.log(another);
+
+//// Garbage collection
+// It is handled automatically by JavaScript
+
+//// String
+
+// //String primitive
+// const message = "This is my first message";
+
+// // String object
+// const another = new String("hi");
+
+// // Template literals
+// const message = "This is my\n" + "first message";
+// const another = `Hi John,
+
+// Thank you for joining my mailing list.
+
+// Regards,
+// Sandip`;
+
+// console.log(another);
+
+// // Date
+// const now = new Date();
+// const date1 = new Date("May 11 2018 09:00");
+// const date2 = new Date(2018, 5, 30, 9);
+
+// Excercise 1 --> Address Object
+
+// street
+// city
+// zipcode
+// showAddress(address)
+
+let address = {
+  street: "a",
+  city: "b",
+  zipCode: "754138",
+};
+
+// function showAddress(address) {
+//   //   for (let value of Object.entries(address)) console.log(value);
+//   for (let key in address) console.log(key, address[key]);
+// }
+
+// showAddress(address);
+
+// // Ex 2 --> Factory and Constructor function
+
+// function factoryAddress(street, city, zipCode) {
+//   return {
+//     street,
+//     city,
+//     zipCode,
+//   };
+// }
+
+// let factAddress = factoryAddress("a", "b", "c");
+// console.log(factAddress);
+
+// Constructor function
+
+// function factoryConstructor(street, city, zipCode) {
+//   this.street = street;
+//   this.city = city;
+//   this.zipCode = zipCode;
+// }
+
+//// Ex3 --> Object Equality
+
+// let constAddress1 = new factoryConstructor("a", "b", "c");
+// let constAddress2 = new factoryConstructor("a", "b", "c");
+
+// function areEqual(address1, address2) {
+//   return address1 === address2;
+// }
+
+// function areSame(address1, address2) {
+//   return (
+//     address1.street === address2.street &&
+//     address1.city === address2.city &&
+//     address1.zipCode === address2.zipCode
+//   );
+// }
+
+// console.log(areEqual(constAddress1, constAddress2));
+// console.log(areSame(constAddress1, constAddress2));
+
+// // Ex 4 --> Blog Post Object
+
+// let post = {
+//   title: "Today is Sunday",
+//   body: "Today is a holiday",
+//   author: "SpectralCone",
+//   views: 202,
+//   comments: [
+//     {
+//       author: "Jon Snow",
+//       body: "Winter is coming",
+//     },
+//     {
+//       author: "Egrite",
+//       body: "You know nothing Jon Snow!",
+//     },
+//   ],
+//   isLive: true,
+// };
+
+// // Ex 5 --> Constructor Functions
+// console.log(post);
+// function postConstructor(title, body, author) {
+//   this.title = title;
+//   this.body = body;
+//   this.author = author;
+//   this.views = 0;
+//   this.comments = [];
+//   this.isLive = false;
+// }
+
+// let post = new postConstructor("a", "b", "c");
+// console.log(post);
+
+// // Ex 6 --> Price Range Objects
+let priceRanges = [
+  {
+    label: "$",
+    tooltip: "Inexpensive",
+    minPerPerson: 0,
+    maxPerPerson: 10,
+  },
+  {
+    label: "$$",
+    tooltip: "Moderate",
+    minPerPerson: 11,
+    maxPerPerson: 100,
+  },
+  {
+    label: "$$$",
+    tooltip: "Expensive",
+    minPerPerson: 101,
+    maxPerPerson: 1000,
+  },
+];
