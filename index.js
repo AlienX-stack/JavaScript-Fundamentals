@@ -567,18 +567,18 @@ const circle = {
 // const date1 = new Date("May 11 2018 09:00");
 // const date2 = new Date(2018, 5, 30, 9);
 
-// Excercise 1 --> Address Object
+// Exercise 1 --> Address Object
 
 // street
 // city
 // zipcode
 // showAddress(address)
 
-let address = {
-  street: "a",
-  city: "b",
-  zipCode: "754138",
-};
+// let address = {
+//   street: "a",
+//   city: "b",
+//   zipCode: "754138",
+// };
 
 // function showAddress(address) {
 //   //   for (let value of Object.entries(address)) console.log(value);
@@ -773,8 +773,224 @@ let address = {
 // const copy = [...combined];
 
 // // Iterating  an array
-const numbers = [1, 2, 3];
+// const numbers = [1, 2, 3];
 
 // for (let number of numbers) console.log(number);
 
-numbers.forEach((number, index) => console.log(index, number));
+// numbers.forEach((number, index) => console.log(index, number));
+
+// // Joining Arrays
+
+// const numbers = [1, 2, 3];
+// const joined = numbers.join(",");
+// console.log(joined);
+
+// const message = "This is my first message";
+// const parts = message.split(" ");
+// console.log(parts);
+// const combined = parts.join("-");
+// console.log(combined);
+
+// // Sorting numbers
+// const numbers = [2, 3, 1];
+// numbers.sort();
+// console.log(numbers);
+
+// numbers.reverse();
+// console.log(numbers);
+
+const courses = [
+  { id: 1, name: "Node.js" },
+  { id: 2, name: "javaScript" },
+];
+
+courses.sort(function (a, b) {
+  // a<b => -1
+  // a>b => 1
+  // a===b=>0
+  const nameA = a.name.toLowerCase();
+  const nameB = b.name.toLowerCase();
+  console.log(nameA, nameB);
+  if (nameA < nameB) return -1;
+  if (nameA > nameB) return 1;
+  return 0;
+});
+
+// console.log(courses);
+
+/// Testing the elements of an array
+
+// every() => every element matches the criteria
+// const numbers = [1, -1, 2, 3];
+
+// const allPositive = numbers.every(function (value) {
+//   return value >= 0;
+// });
+
+// console.log(allPositive);
+
+// some() => atleast some elements matches the criteria
+
+// const atLeastOnePositive = numbers.some(function (value) {
+//   return value >= 0;
+// });
+
+// console.log(atLeastOnePositive);
+
+///////////
+// // Filtering an array
+// const filtered = numbers.filter((value) => value >= 0);
+
+// console.log(filtered);
+
+// Map
+
+// const items = filtered.map((n) => "<li>" + n + "</li>");
+// console.log(items);
+
+// const html = items.join();
+// console.log(html);
+
+// const items = filtered.map((n) => {
+//   console.log(n);
+// });
+
+// const items = numbers
+//   .filter((n) => n >= 0)
+//   .map((n) => ({ value: n }))
+//   .filter((obj) => obj.value > 1)
+//   .map((obj) => obj.value);
+// console.log(items);
+
+/**
+ * * Reduce
+ */
+
+// let sum = 0;
+// for (let n of numbers) sum += n;
+
+// console.log(sum);
+
+// const sumReduce = numbers.reduce((accumulator, currentValue) => {
+//   return accumulator + currentValue;
+// }, 0);
+
+// console.log(sum);
+
+/**
+ * ? Exercise 1 : Array from Range
+ */
+
+// const arrayFromRange = (min, max) => {
+//   const output = [];
+//   for (let i = min; i <= max; i++) output.push(i);
+//   return output;
+// };
+// const numbers = arrayFromRange(-10, -4);
+// console.log(numbers);
+
+/**
+ * ! Exercise 2 : Includes
+ */
+
+// const numbers = [1, 2, 3, 4];
+
+// const includes = (array, searchElement) => {
+//   for (let i of array) if (i === searchElement) return true;
+//   return false;
+// };
+
+// const result = includes(numbers, 3);
+// console.log(result);
+
+/**
+ * Todo Exercise 3: Except
+ */
+
+// const numbers = [1, 2, 3, 4, 1, 1];
+
+// const except = (array, excluded) => {
+//   let output = [];
+//   for (let i of array) if (!excluded.includes(i)) output.push(i);
+//   return output;
+// };
+
+// const output = except(numbers, [1, 2]);
+// console.log(output);
+
+/**
+ * ! Exercise 4: Moving an element
+ */
+
+// const numbers = [1, 2, 3, 4];
+
+// const output = move(numbers, 1, -4);
+
+// function move(array, index, offset) {
+//   const position = index + offset;
+
+//   if (position >= array.length || position <= array.length) {
+//     console.error("Invalid offset");
+//     return;
+//   }
+//   const output = [...array];
+//   const element = output.splice(index, 1)[0];
+//   output.splice(position, 0, element);
+//   return output;
+// }
+
+// console.log(output);
+
+/**
+ * * Exercise 5 : Count occurrences
+ */
+
+// const numbers = [1, 2, 3, 4, 1];
+
+// const countOccurrences = (array, searchElement) => {
+//   const count = array.reduce((acc, cur) => {
+//     const num = cur === searchElement ? 1 : 0;
+//     console.log(acc, cur, searchElement);
+//     return acc + num;
+//   }, 0);
+
+//   return count;
+// };
+
+// const count = countOccurrences(numbers, 1);
+// console.log(count);
+
+/**
+ * ? Exercise 6 : Get Max
+ */
+
+// const numbers = [1, 2, 3, 5, 4, 40];
+
+// const getMax = (array) => {
+//   if (array.length === 0) return undefined;
+//   return array.reduce((acc, cur) => (cur > acc ? (acc = cur) : acc));
+// };
+
+// console.log(getMax(numbers));
+
+/**
+ * ! Exercise 7 : Movies
+ */
+
+const movies = [
+  { title: "b", year: 2018, rating: 4.2 },
+  { title: "a", year: 2018, rating: 4.5 },
+  { title: "e", year: 2018, rating: 4.1 },
+  { title: "c", year: 2022, rating: 3.5 },
+  { title: "d", year: 2019, rating: 3 },
+];
+
+const movieRatings = (movies) => {
+  return movies
+    .filter((movie) => movie.rating > 4 && movie.year === 2018)
+    .sort((a, b) => a.rating - b.rating)
+    .reverse()
+    .map((m) => m.title);
+};
+
+console.log(movieRatings(movies));
