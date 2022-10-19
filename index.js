@@ -509,12 +509,12 @@
 // console.log(obj); output:11
 
 //// Enumerating an object
-const circle = {
-  radius: 1,
-  draw() {
-    console.log("draw");
-  },
-};
+// const circle = {
+//   radius: 1,
+//   draw() {
+//     console.log("draw");
+//   },
+// };
 
 // for (let key in circle) {
 //   console.log(key, circle[key]);
@@ -799,22 +799,22 @@ const circle = {
 // numbers.reverse();
 // console.log(numbers);
 
-const courses = [
-  { id: 1, name: "Node.js" },
-  { id: 2, name: "javaScript" },
-];
+// const courses = [
+//   { id: 1, name: "Node.js" },
+//   { id: 2, name: "javaScript" },
+// ];
 
-courses.sort(function (a, b) {
-  // a<b => -1
-  // a>b => 1
-  // a===b=>0
-  const nameA = a.name.toLowerCase();
-  const nameB = b.name.toLowerCase();
-  console.log(nameA, nameB);
-  if (nameA < nameB) return -1;
-  if (nameA > nameB) return 1;
-  return 0;
-});
+// courses.sort(function (a, b) {
+//   // a<b => -1
+//   // a>b => 1
+//   // a===b=>0
+//   const nameA = a.name.toLowerCase();
+//   const nameB = b.name.toLowerCase();
+//   console.log(nameA, nameB);
+//   if (nameA < nameB) return -1;
+//   if (nameA > nameB) return 1;
+//   return 0;
+// });
 
 // console.log(courses);
 
@@ -977,20 +977,291 @@ courses.sort(function (a, b) {
  * ! Exercise 7 : Movies
  */
 
-const movies = [
-  { title: "b", year: 2018, rating: 4.2 },
-  { title: "a", year: 2018, rating: 4.5 },
-  { title: "e", year: 2018, rating: 4.1 },
-  { title: "c", year: 2022, rating: 3.5 },
-  { title: "d", year: 2019, rating: 3 },
-];
+// const movies = [
+//   { title: "b", year: 2018, rating: 4.2 },
+//   { title: "a", year: 2018, rating: 4.5 },
+//   { title: "e", year: 2018, rating: 4.1 },
+//   { title: "c", year: 2022, rating: 3.5 },
+//   { title: "d", year: 2019, rating: 3 },
+// ];
 
-const movieRatings = (movies) => {
-  return movies
-    .filter((movie) => movie.rating > 4 && movie.year === 2018)
-    .sort((a, b) => a.rating - b.rating)
-    .reverse()
-    .map((m) => m.title);
+// const movieRatings = (movies) => {
+//   return movies
+//     .filter((movie) => movie.rating > 4 && movie.year === 2018)
+//     .sort((a, b) => a.rating - b.rating)
+//     .reverse()
+//     .map((m) => m.title);
+// };
+
+// console.log(movieRatings(movies));
+
+/**
+ * * * Functions
+ */
+
+//Function Declaration
+
+// function walk() {
+//   console.log("walk");
+// }
+
+// Function Expression
+
+/**
+ * ? Anonymous Function Expression
+ */
+// let run = function () {
+//   console.log("run");
+// };
+
+/**
+ * ! Named Function Expression
+ */
+
+// let named = function name() {
+//   console.log("run");
+// };
+
+// named();
+
+/**
+ * ? Hoisting
+ * * It takes function declaration to the top
+ */
+
+// walk();
+
+// function walk() {
+//   console.log("walk");
+// }
+
+// run();
+// const run = function () {
+//   console.log("run");
+// };
+
+/**
+ * todo Arguments
+ */
+
+// function sum() {
+//   let total = 0;
+//   for (let value of arguments) total += value;
+//   return total;
+//   // console.log(arguments);
+//   // return a + b;
+// }
+
+// console.log(sum(1, 2, 3, 4, 5));
+
+/**
+ * ?  Rest operator
+ * * It must be the last formal parameter
+ */
+
+// function sum(discount, ...args) {
+//   const total = args.reduce((acc, cur) => acc + cur);
+//   return total * (1 - discount);
+// }
+
+// console.log(sum(0.1, 20, 30));
+
+/**
+ * ! Default Parameters
+ */
+
+// function interest(principal, rate = 3.5, years) {
+//   return ((principal * rate) / 100) * years;
+// }
+
+// console.log(interest(10000, undefined, 2));
+
+/**
+ * ? Getters and Setters
+ */
+
+// const person = {
+//   firstName: "Mosh",
+//   lastName: "Hamedani",
+//   // fullName:function(){}
+//   get fullName() {
+//     return `${person.firstName} ${person.lastName}`;
+//   },
+//   set fullName(value) {
+//     const parts = value.split(" ");
+//     this.firstName = parts[0];
+//     this.lastName = parts[1];
+//   },
+// };
+
+// person.fullName = "John Snow";
+
+// // getters => access properties
+// // setters => change (mutate) them
+
+// console.log(person.fullName);
+
+/**
+ * ? Error handling
+ */
+
+// const person = {
+//   firstName: "Mosh",
+//   lastName: "Hamedani",
+//   // fullName:function(){}
+//   get fullName() {
+//     return `${person.firstName} ${person.lastName}`;
+//   },
+//   set fullName(value) {
+//     // if (typeof value !== "string") return;
+//     if (typeof value !== "string") throw new Error("Value is not a string");
+//     const parts = value.split(" ");
+//     if (parts.length !== 2) throw new Error("Enter a first and last name");
+//     this.firstName = parts[0];
+//     this.lastName = parts[1];
+//   },
+// };
+
+// try {
+//   person.fullName = "";
+// } catch (e) {
+//   console.log(e);
+// }
+// console.log(person);
+
+/**
+ * ! Local vs Global Storage
+ */
+
+/**
+ * ? Let vs var
+ * * var => function-scoped
+ * * ES6 : let,const => block-scoped
+ */
+
+// function start() {
+//   for (var i = 0; i < 5; i++) console.log(i);
+
+//   console.log(i);
+// }
+// start();
+
+/**
+ * todo  The this keyword
+ * * method -> obj
+ * * function --> global(window, global)
+ */
+
+// Example 1
+// const video = {
+//   title: "a",
+//   play() {
+//     console.log(this);
+//   },
+// };
+
+// video.stop = function () {
+//   console.log(this);
+// };
+
+// video.stop();
+
+// Example 2
+// const video = {
+//   title: "a",
+//   tags: ["a", "b", "c", "d"],
+//   showTags() {
+//     // console.log(this);
+//     const self = this;
+//     this.tags.forEach(function (tag) {
+//       console.log(self.title, tag);
+//     }, this);
+//   },
+// };
+
+// // function Video(title) {
+// //   this.title = title;
+// //   console.log(this);
+// // }
+
+// // const v = new Video("a");
+
+// video.showTags();
+
+// function playVideo() {
+//   console.log(this);
+// }
+
+// playVideo.call({ name: "John" }, 1, 2);
+// playVideo.apply({ name: "John" }, [1, 2]);
+// playVideo.bind({ name: "John Doe" })();
+
+// const video = {
+//   title: "a",
+//   tags: ["a", "b", "c"],
+//   showTags() {
+//     this.tags.forEach(
+//       function (tag) {
+//         console.log(this.title, tag);
+//       }.bind(this)
+//     );
+//   },
+// };
+
+// video.showTags();
+
+// const video = {
+//   title: "a",
+//   tags: ["a", "b", "c"],
+//   showTags() {
+//     this.tags.forEach((tag) => {
+//       console.log(this.title, tag);
+//     });
+//   },
+// };
+
+// video.showTags();
+
+/**
+ * ! Exercise 1 : Sum of arguments
+ */
+// const sum = (...args) => {
+//   if (Array.isArray(args[0]) && args.length === 1) args = [...args[0]];
+//   return args.reduce((a, b) => a + b);
+// };
+
+// console.log(sum([1, 2, 3, 4]));
+
+/**
+ * ! Exercise 2: Area of Circle
+ */
+
+// const circle = {
+//   radius: 2,
+//   get area() {
+//     return Math.PI * this.radius * this.radius;
+//   },
+// };
+
+// console.log(circle.area);
+
+/*
+ * Exercise 3: Error handling
+ */
+
+const numbers = [1, 2, 3, 4, 1];
+
+const countOccurrences = (array, searchElement) => {
+  if (!Array.isArray(array)) throw new Error("This is not an array");
+  return array.reduce((acc, cur) => {
+    const num = cur === searchElement ? 1 : 0;
+    return acc + num;
+  }, 0);
 };
 
-console.log(movieRatings(movies));
+try {
+  const count = countOccurrences(null, 1);
+  console.log(count);
+} catch (e) {
+  console.log(e.message);
+}
